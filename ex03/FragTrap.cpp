@@ -48,3 +48,25 @@ FragTrap& FragTrap::operator=(const FragTrap& fragtrap) {
 void	FragTrap::highFivesGuys() {
 	std::cout << "Give me Highfives!\n";
 }
+
+void FragTrap::takeDamage(unsigned int amount) {
+	if (m_points != 0){
+		m_points -= amount;
+		std::cout << "FragTrap " << m_name << " took " << amount << " of damage\n";
+	}
+	else
+		std::cout << "FragTrap " <<  m_name << " is dead\n";
+}
+
+void FragTrap::beRepaired(unsigned int amount) {
+	if (m_energy != 0 && m_points){
+		m_energy--;
+		m_points += amount;
+		std::cout << "FragTrap " << m_name << " repaired " << amount << " points back\n";
+	}
+	else if (!m_points)
+		std::cout << "FragTrap " <<  m_name << " is dead\n";
+	else
+		std::cout << "FragTrap " << m_name << " is dead, no more energy points left\n";
+}
+

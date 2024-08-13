@@ -20,6 +20,8 @@ int	main(){
 	ScavTrap	scav("Scav");
 	FragTrap	frag("Frag");
 
+	std::cout << "\n\n";
+
 	clap.attack("Manel");
 	clap.takeDamage(5);
 	
@@ -36,16 +38,22 @@ int	main(){
 	clap.takeDamage(5);
 	clap.attack("Manel");
 
+	std::cout << "\n\n";
 
 	scav.attack("Manel");
 	scav.takeDamage(3);
 	scav.beRepaired(1);
 	scav.guardGate();
 
+	std::cout << "\n\n";
+
 	frag.attack("Manel");
 	frag.takeDamage(3);
 	frag.beRepaired(1);
 
+	frag.highFivesGuys();
+
+	std::cout << "\n\n";
 
 	return 0;
 	

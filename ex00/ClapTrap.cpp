@@ -13,60 +13,60 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : m_name ("Temp"), m_energy (10), m_points (10), m_attack (0) {
-	std::cout << "Default constructor called\n";
+	std::cout << "Default constructor for ClapTrap called\n";
 }
 
 ClapTrap::ClapTrap(std::string name) : m_name (name), m_energy (10), m_points (10), m_attack (0) {
-	std::cout << "Name constructor called\n";
+	std::cout << "Name constructor for ClapTrap called\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& claptrap) {
 	*this = claptrap;
-	std::cout << "Copy constructor was called\n";
+	std::cout << "Copy constructor for ClapTrap was called\n";
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor was called\n";
+	std::cout << "Destructor for ClapTrap was called\n";
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap) {
-	this->m_name = claptrap.m_name;
-	this->m_energy = claptrap.m_energy;
-	this->m_points = claptrap.m_points;
-	this->m_attack = claptrap.m_attack;
+	m_name = claptrap.m_name;
+	m_energy = claptrap.m_energy;
+	m_points = claptrap.m_points;
+	m_attack = claptrap.m_attack;
 	
 	std::cout << "Copy assignment for ClapTrap constructed\n";
 	return (*this);
 }
 
 void ClapTrap::attack(const std::string& target) {
-	if (this->m_energy != 0 && this->m_points){
-		this->m_energy--;
-		std::cout << "ClapTrap " << this->m_name << " attacks " << target << ", causing " << this->m_attack << " points of damage!\n";
+	if (m_energy != 0 && m_points){
+		m_energy--;
+		std::cout << "ClapTrap " << m_name << " attacks " << target << ", causing " << m_attack << " points of damage!\n";
 	}
-	else if (!this->m_points)
-		std::cout << "ClapTrap " <<  this->m_name << " is dead\n";
+	else if (!m_points)
+		std::cout << "ClapTrap " <<  m_name << " is dead\n";
 	else
-		std::cout << "ClapTrap " << this->m_name << " can't attack, no more energy points left\n";
+		std::cout << "ClapTrap " << m_name << " can't attack, no more energy points left\n";
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->m_points != 0){
-		this->m_points -= amount;
-		std::cout << "ClapTrap " << this->m_name << " took " << amount << " of damage\n";
+	if (m_points != 0){
+		m_points -= amount;
+		std::cout << "ClapTrap " << m_name << " took " << amount << " of damage\n";
 	}
 	else
-		std::cout << "ClapTrap " <<  this->m_name << " is dead\n";
+		std::cout << "ClapTrap " <<  m_name << " is dead\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (this->m_energy != 0 && this->m_points){
-		this->m_energy--;
-		this->m_points += amount;
-		std::cout << "ClapTrap " << this->m_name << " repaired " << amount << " points back\n";
+	if (m_energy != 0 && m_points){
+		m_energy--;
+		m_points += amount;
+		std::cout << "ClapTrap " << m_name << " repaired " << amount << " points back\n";
 	}
-	else if (!this->m_points)
-		std::cout << "ClapTrap " <<  this->m_name << " is dead\n";
+	else if (!m_points)
+		std::cout << "ClapTrap " <<  m_name << " is dead\n";
 	else
-		std::cout << "ClapTrap " << this->m_name << " is dead, no more energy points left\n";
+		std::cout << "ClapTrap " << m_name << " is dead, no more energy points left\n";
 }

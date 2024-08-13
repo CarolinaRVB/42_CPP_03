@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HP
+#ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
 #include "ClapTrap.hpp"
@@ -25,6 +25,7 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 		DiamondTrap& operator=(const DiamondTrap& diamondtrap);
 
 		~DiamondTrap();
+		
 		void whoAmI();
 
 	private:
