@@ -23,8 +23,6 @@ class FragTrap : virtual public ClapTrap {
 		
 		FragTrap& operator=(const FragTrap& fragtrap);
 		void highFivesGuys(void);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
 		~FragTrap();
 
 	private:

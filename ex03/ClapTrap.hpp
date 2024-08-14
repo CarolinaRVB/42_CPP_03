@@ -28,6 +28,10 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
+		int getAttackPoints(void);
+		int getEnergyPoints(void);
+		int getHitPoints(void);
+
 		
 	protected:
 		std::string	m_name;

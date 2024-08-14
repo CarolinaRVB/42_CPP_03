@@ -29,6 +29,21 @@ ClapTrap::~ClapTrap() {
 	std::cout << "Destructor for ClapTrap was called\n";
 }
 
+int	ClapTrap::getAttackPoints(void) {
+
+	return (m_attack);
+}
+
+int	ClapTrap::getEnergyPoints(void) {
+
+	return (m_energy);
+}
+
+int	ClapTrap::getHitPoints(void) {
+
+	return (m_points);
+}
+
 void ClapTrap::attack(const std::string& target) {
 	if (m_energy != 0 && m_points){
 		m_energy--;

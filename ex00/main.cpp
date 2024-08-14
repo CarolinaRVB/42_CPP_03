@@ -16,6 +16,8 @@ int	main(){
 
 	ClapTrap	clap("Teodoro");
 
+	std::cout << "\n\n";
+
 	clap.attack("Manel");
 	clap.takeDamage(5);
 	
@@ -31,6 +33,8 @@ int	main(){
 	clap.beRepaired(1);
 	clap.takeDamage(5);
 	clap.attack("Manel");
+
+	std::cout << "\n\n";
 
 	return 0;
 	

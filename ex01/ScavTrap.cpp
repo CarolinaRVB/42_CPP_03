@@ -62,25 +62,3 @@ void ScavTrap::attack(const std::string& target) {
 	else
 		std::cout << "ScavTrap " << m_name << " can't attack, no more energy points left\n";
 }
-
-void ScavTrap::takeDamage(unsigned int amount) {
-	if (m_points != 0){
-		m_points -= amount;
-		std::cout << "ScavTrap " << m_name << " took " << amount << " of damage\n";
-	}
-	else
-		std::cout << "ScavTrap " <<  m_name << " is dead\n";
-}
-
-void ScavTrap::beRepaired(unsigned int amount) {
-	if (m_energy != 0 && m_points){
-		m_energy--;
-		m_points += amount;
-		std::cout << "ScavTrap " << m_name << " repaired " << amount << " points back\n";
-	}
-	else if (!m_points)
-		std::cout << "ScavTrap " <<  m_name << " is dead\n";
-	else
-		std::cout << "ScavTrap " << m_name << " is dead, no more energy points left\n";
-}
-
